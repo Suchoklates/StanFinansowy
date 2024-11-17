@@ -17,6 +17,11 @@ struct StanFinansowyApp: App {
         }
     }
     
-    let dataHandling = DataHandling()
-    var dataBase = dataHandling.initDataBase(csvDataBaseName:"StanFinansowy_RawData")
+    var dataBase : DataFrame
+    init() {
+        dataBase = initDataBase(csvDataBaseName:"StanFinansowy_RawData")
+    }
+    
+    var dataGroupedByYear = dataBase.grouped(by: "Rok")
+    
 }

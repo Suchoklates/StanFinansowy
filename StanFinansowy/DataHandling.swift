@@ -30,15 +30,21 @@ func initDataBase (csvDataBaseName: String) -> DataFrame{
         
     initDataFrame.transformColumn("Wydatek") { (wydatek: String) in wydatek.replacingOccurrences(of: ",", with: ".") } //replace "," with ".", to make float numbers possible
     initDataFrame.transformColumn("Wydatek") { (wydatek: String) in Float(wydatek) } //change data format to float
+    initDataFrame.removeColumn("Column 6")
     
     print(initDataFrame)
     
     return initDataFrame
 }
 
-func sortDataBase (dataBase: DataFrame) -> DataFrame{
+
+func sortDataByYear (dataFrame: DataFrame) -> RowGroupingProtocol{
+    let dataGroupedByYear = dataFrame.grouped(by: "Rok")
+    //    var _currentYear: Int = 2024
     
-    var sortedDataBase = dataBase.sorted(by: ["Rok", "Miesiac", "Konto", "Nazwa", "Kategoria", "Wydatek"])
+    var numberOfRows = dataGroupedByYear.counts()
     
-    return sortedDataBase
+    print(numberOfRows)
+    
+    return dataGroupedByYear
 }

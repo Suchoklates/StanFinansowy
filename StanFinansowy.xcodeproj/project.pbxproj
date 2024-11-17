@@ -8,6 +8,7 @@
 
 /* Begin PBXFileReference section */
 		F6C5A4E02CE9208300B293BE /* StanFinansowy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StanFinansowy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6FD81A72CEA39F7008805E6 /* Playground_DataHandling.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Playground_DataHandling.playground; path = ../Playground_DataHandling.playground; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -32,6 +33,7 @@
 		F6C5A4D72CE9208300B293BE = {
 			isa = PBXGroup;
 			children = (
+				F6FD81A72CEA39F7008805E6 /* Playground_DataHandling.playground */,
 				F6C5A4E22CE9208300B293BE /* StanFinansowy */,
 				F6C5A4E12CE9208300B293BE /* Products */,
 			);
