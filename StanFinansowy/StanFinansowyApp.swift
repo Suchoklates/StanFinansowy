@@ -11,17 +11,18 @@ import TabularData
 
 @main
 struct StanFinansowyApp: App {
+    var dataBase : DataFrame
+    var dataGrouped : RowGroupingProtocol
+    init() {
+        dataBase = initDataBase(csvDataBaseName:"StanFinansowy_RawData")
+        dataGrouped = sortDataByYear(dataFrame: dataBase)
+        //print(dataGrouped)
+    }
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
     }
-    
-    var dataBase : DataFrame
-    init() {
-        dataBase = initDataBase(csvDataBaseName:"StanFinansowy_RawData")
-    }
-    
-    var dataGroupedByYear = dataBase.grouped(by: "Rok")
-    
+
 }

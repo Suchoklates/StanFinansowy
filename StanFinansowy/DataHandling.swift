@@ -32,7 +32,7 @@ func initDataBase (csvDataBaseName: String) -> DataFrame{
     initDataFrame.transformColumn("Wydatek") { (wydatek: String) in Float(wydatek) } //change data format to float
     initDataFrame.removeColumn("Column 6")
     
-    print(initDataFrame)
+    //print(initDataFrame)
     
     return initDataFrame
 }
@@ -42,9 +42,7 @@ func sortDataByYear (dataFrame: DataFrame) -> RowGroupingProtocol{
     let dataGroupedByYear = dataFrame.grouped(by: "Rok")
     //    var _currentYear: Int = 2024
     
-    var numberOfRows = dataGroupedByYear.counts()
-    
-    print(numberOfRows)
+    //let numberOfRows = dataGroupedByYear.counts()
     
     return dataGroupedByYear
 }
